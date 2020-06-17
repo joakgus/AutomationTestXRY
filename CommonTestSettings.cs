@@ -1,5 +1,4 @@
 ﻿
-
 namespace AutomationTestXRY
 {
     internal class CommonTestSettings

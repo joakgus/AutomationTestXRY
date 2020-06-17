@@ -32,7 +32,6 @@ namespace AutomationTestXRY
             secondarySession = new WindowsDriver<WindowsElement>(new Uri(CommonTestSettings.WindowsApplicationDriverUrl), opt);
 
             secondarySession.FindElementByName("Add license").Click();
-
             var currentWindowHandle = secondarySession.CurrentWindowHandle;
             Thread.Sleep(TimeSpan.FromSeconds(3));
             var allWindowHandles2 = secondarySession.WindowHandles;
