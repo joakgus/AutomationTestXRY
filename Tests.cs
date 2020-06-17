@@ -17,10 +17,9 @@ namespace AutomationTestXRY
         {
             // Test if the license doesn't exist.
             session.FindElementByName("Extract").Click();
-            Assert.IsTrue(session.FindElementByName("No valid license found").Enabled);
+            Assert.IsTrue(session.FindElementByClassName("LicenseCheck").Enabled);
             session.FindElementByName("BACK").Click();
             session.FindElementByName("MENU").Click();
-            Assert.IsTrue(session.FindElementByName("PROCESS OPTIONS").Enabled);
             session.FindElementByName("MANAGE LICENSES").Click();
             Thread.Sleep(TimeSpan.FromSeconds(3));
 
@@ -58,11 +57,13 @@ namespace AutomationTestXRY
         public void OpenFileTest()
         {
             session.FindElementByName("Open...").Click();
-            session.FindElementByName("2019-05-07_15.49.xrycase").Click();
+            session.FindElementByClassName("UIProperty").Click();
             session.FindElementByName("Open").Click();
-            Assert.IsTrue(session.FindElementByName("2019-05-07_15.49").Displayed);
             session.FindElementByClassName("MenuItem").Click();
             session.FindElementByName("Edit file data").Click();
+            var currentWindowHandle = session.CurrentWindowHandle;
+            var allWindowHandles2 = session.WindowHandles;
+            session.SwitchTo().Window(allWindowHandles2[0]);
             session.FindElementByName("CLOSE").Click();
             session.FindElementByName("HOME").Click();
         }
@@ -93,9 +94,7 @@ namespace AutomationTestXRY
             session.FindElementByAccessibilityId("OperatorTextBox").Click();
             session.Keyboard.SendKeys("Joakim");
             session.FindElementByName("Next").Click();
-            Thread.Sleep(TimeSpan.FromMinutes(1));
-            //session.FindElementByName("OK").Click();
-            //Thread.Sleep(TimeSpan.FromMinutes(1));
+            Thread.Sleep(TimeSpan.FromSeconds(20));
             var currentWindowHandle = session.CurrentWindowHandle;
             var allWindowHandles2 = session.WindowHandles;
             session.SwitchTo().Window(allWindowHandles2[0]);

@@ -27,7 +27,7 @@ namespace AutomationTestXRY
             var openWindows = session.FindElementsByClassName("Window");
             foreach (var window in openWindows)
             {
-                if (window.GetAttribute("Name").StartsWith("XRY"))
+                if (window.GetAttribute("Name").Equals("XRY"))
                 {
                     applicationWindow = window;
                     break;
