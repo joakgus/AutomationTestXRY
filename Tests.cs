@@ -81,6 +81,33 @@ namespace AutomationTestXRY
             session.FindElementByName("HOME").Click();
         }
 
+        [TestMethod]
+        public void Extraction()
+        {
+            session.FindElementByName("Extract").Click();
+            session.FindElementByAccessibilityId("ToggleConnectedDevices").Click();
+            session.FindElementByName("Huawei Y5 Lite CRO-L03 2017 LTE AM").Click();
+            session.FindElementByName("Logical (No files)").Click();
+            session.FindElementByName("Next").Click();
+            session.FindElementByName("Next").Click();
+            session.FindElementByAccessibilityId("OperatorTextBox").Click();
+            session.Keyboard.SendKeys("Joakim");
+            session.FindElementByName("Next").Click();
+            Thread.Sleep(TimeSpan.FromMinutes(1));
+            //session.FindElementByName("OK").Click();
+            //Thread.Sleep(TimeSpan.FromMinutes(1));
+            var currentWindowHandle = session.CurrentWindowHandle;
+            var allWindowHandles2 = session.WindowHandles;
+            session.SwitchTo().Window(allWindowHandles2[0]);
+            session.FindElementByAccessibilityId("SaveLogButton").Click();
+            session.FindElementByName("Save").Click();
+            session.FindElementByName("Finish").Click();
+            currentWindowHandle = session.CurrentWindowHandle;
+            allWindowHandles2 = session.WindowHandles;
+            session.SwitchTo().Window(allWindowHandles2[0]);
+            session.FindElementByName("HOME").Click();
+        }
+
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
