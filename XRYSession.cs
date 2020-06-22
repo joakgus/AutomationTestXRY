@@ -41,6 +41,7 @@ namespace AutomationTestXRY
             opts.AddAdditionalCapability("deviceName", "WindowsPC");
             opts.AddAdditionalCapability("appTopLevelWindow", topLevelWindowHandle);
             session = new WindowsDriver<WindowsElement>(new Uri(WindowsApplicationDriverUrl), opts);
+            session.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         public static void TearDown()

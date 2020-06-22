@@ -4,6 +4,8 @@ using System.Threading;
 using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using System.Configuration;
+using System.Text;
 
 namespace AutomationTestXRY
 {
@@ -21,7 +23,6 @@ namespace AutomationTestXRY
             session.FindElementByName("BACK").Click();
             session.FindElementByName("MENU").Click();
             session.FindElementByName("MANAGE LICENSES").Click();
-            Thread.Sleep(TimeSpan.FromSeconds(3));
 
             secondarySession = Utility.CreateNewSession(CommonTestSettings.Licesnse);
             var existingApplicationTopLevelWindow = secondarySession.CurrentWindowHandle;
@@ -33,7 +34,6 @@ namespace AutomationTestXRY
 
             secondarySession.FindElementByName("Add license").Click();
             var currentWindowHandle = secondarySession.CurrentWindowHandle;
-            Thread.Sleep(TimeSpan.FromSeconds(3));
             var allWindowHandles2 = secondarySession.WindowHandles;
             secondarySession.SwitchTo().Window(allWindowHandles2[0]);
 
@@ -93,6 +93,7 @@ namespace AutomationTestXRY
             session.FindElementByAccessibilityId("OperatorTextBox").Click();
             session.Keyboard.SendKeys("Joakim");
             session.FindElementByName("Next").Click();
+
             Thread.Sleep(TimeSpan.FromSeconds(20));
             var currentWindowHandle = session.CurrentWindowHandle;
             var allWindowHandles2 = session.WindowHandles;
@@ -100,6 +101,7 @@ namespace AutomationTestXRY
             session.FindElementByAccessibilityId("SaveLogButton").Click();
             session.FindElementByName("Save").Click();
             session.FindElementByName("Finish").Click();
+            
             currentWindowHandle = session.CurrentWindowHandle;
             allWindowHandles2 = session.WindowHandles;
             session.SwitchTo().Window(allWindowHandles2[0]);
