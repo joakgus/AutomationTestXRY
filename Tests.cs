@@ -94,7 +94,7 @@ namespace AutomationTestXRY
             session.Keyboard.SendKeys("Joakim");
             session.FindElementByName("Next").Click();
 
-            Thread.Sleep(TimeSpan.FromSeconds(20));
+            Thread.Sleep(TimeSpan.FromSeconds(15));
             var currentWindowHandle = session.CurrentWindowHandle;
             var allWindowHandles2 = session.WindowHandles;
             session.SwitchTo().Window(allWindowHandles2[0]);
