@@ -5,17 +5,7 @@ namespace AutomationTestXRY
     {
         public const string WindowsApplicationDriverUrl = "http://127.0.0.1:4723";
 
-        public const string AlarmClockAppId = "Microsoft.WindowsAlarms_8wekyb3d8bbwe!App";
-        public const string CalculatorAppId = "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App";
-        public const string DesktopAppId = "Root";
-        public const string EdgeAppId = "Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge";
-        public const string ExplorerAppId = @"C:\Windows\System32\explorer.exe";
-        public const string NotepadAppId = @"C:\Windows\System32\notepad.exe";
         public const string Licesnse = @"C:\Program Files (x86)\MSAB\XLicense\MSAB License Manager.exe";
-
-        public const string EdgeAboutBlankURL = "about:blank";
-        public const string EdgeAboutFlagsURL = "about:flags";
-        public const string EdgeAboutTabsURL = "about:tabs";
 
         public const string TestFileName = @"TestFile";
         public const string TestFolderLocation = @"%TEMP%";

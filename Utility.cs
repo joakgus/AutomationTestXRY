@@ -106,7 +106,7 @@ namespace AutomationTestXRY
         {
             // Create new calculator session and close the window to get an orphaned element
             CleanupOrphanedSession();
-            orphanedSession = CreateNewSession(CommonTestSettings.CalculatorAppId);
+            orphanedSession = CreateNewSession(CommonTestSettings.Licesnse);
             orphanedElement = orphanedSession.FindElementByAccessibilityId("AppNameTitle");
             orphanedWindowHandle = orphanedSession.CurrentWindowHandle;
             orphanedSession.Close();
