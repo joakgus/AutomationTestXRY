@@ -3,12 +3,11 @@ namespace AutomationTestXRY
 {
     internal class CommonTestSettings
     {
+        //change here to connect to a remote computer.
         public const string WindowsApplicationDriverUrl = "http://127.0.0.1:4723";
 
         public const string Licesnse = @"C:\Program Files (x86)\MSAB\XLicense\MSAB License Manager.exe";
 
-        public const string TestFileName = @"TestFile";
-        public const string TestFolderLocation = @"%TEMP%";
     }
 
     public class ErrorStrings
